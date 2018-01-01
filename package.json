@@ -1,0 +1,22 @@
+{
+  "name": "dingdog",
+  "version": "0.1.0",
+  "description": "A node package that finally answers the question: \"What if my dog could text me?\"",
+  "bin": "index.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "raspberry-pi",
+    "npm-package",
+    "gpio",
+    "nonsense"
+  ],
+  "author": "Jammerware",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "twilio": "^3.11.0"
+  }
+}
