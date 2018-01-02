@@ -1,17 +1,16 @@
 require('dotenv').config();
-const client = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_AUTHTOKEN);
 const MessageBodyService = require('./lib/service.messageBody');
+const TwilioService = require('./lib/service.twilio');
 
 let messageBodyService = new MessageBodyService();
+let twilioService = new TwilioService(process.env.TWILIO_SID, process.env.TWILIO_AUTHTOKEN, '+18563693283');
 
-client.messages.create({
-    body: "Dingdog is online!",
-    to: '+13026702550',
-    from: '+18563693283'
-})
-    .then((message) => process.stdout.write(message.sid))
-    .catch((reason) => console.log(reason));
+(async () => {
+    let message = await twilioService.send('+13026702550', "Dingdog is online!");
+    process.stdout.write("Message sid");
+    process.stdout.write(message.sid);
+})();
 
-while (true) {
+//while (true) {
     // todo: literally anything
-}
+//}
