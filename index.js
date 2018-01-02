@@ -5,9 +5,13 @@ const MessageBodyService = require('./lib/service.messageBody');
 let messageBodyService = new MessageBodyService();
 
 client.messages.create({
-    body: messageBodyService.getMessage(),
+    body: "Dingdog is online!",
     to: '+13026702550',
     from: '+18563693283'
 })
     .then((message) => process.stdout.write(message.sid))
     .catch((reason) => console.log(reason));
+
+while (true) {
+    // todo: literally anything
+}
